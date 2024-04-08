@@ -1,0 +1,28 @@
+class Solution(object):
+    def longestPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        pal_list = []
+        test_list =[]
+        length_s = len(s)
+        max_str = ""
+        for l in range(0,len(s)):
+            for letter in range(l,len(s)):
+                test_list.append(s[letter])
+                new_s = ''.join(test_list)
+                if new_s == new_s[::-1]:
+                    pal_list.append(new_s)
+                else:
+                    continue
+            test_list = []
+            new_s = ''
+                
+        for i in pal_list:
+            if len(max_str) < len(i):
+                max_str = i
+            else: 
+                continue
+        
+        return max_str
