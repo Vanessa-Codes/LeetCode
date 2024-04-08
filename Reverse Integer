@@ -1,0 +1,23 @@
+class Solution(object):
+    def reverse(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        s = str(x)
+        reversed_s = ''
+        if s[0] == '-':
+            for i in range(len(s)-1,0,-1):
+                reversed_s += s[i]
+            reversed_s = s[0] + reversed_s
+        else:
+            for i in range(len(s)-1,-1, -1):
+                reversed_s += s[i]
+
+        reversed_s_int = int(reversed_s)
+        print(reversed_s_int)
+
+        if reversed_s_int >= 2 ** 31 - 1 or reversed_s_int <= -2 ** 31:     
+            return 0 
+        else: 
+            return reversed_s_int 
